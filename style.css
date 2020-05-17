@@ -1,0 +1,26 @@
+img{
+  animation: up 1.0s loop;
+}
+@keyframes up {
+  0%{
+    top:0;
+  }
+  100%{
+    top: 100%;
+  }
+}
+.firstrow img:nth-child(1){
+  animation-delay: 0.0s;
+}
+.firstrow img:nth-child(2){
+  animation-delay: 2.0s;
+}
+.firstrow img:nth-child(3){
+  animation-delay: 4.0s;
+}
+.firstrow img:nth-child(4){
+  animation-delay: 6.0s;
+}
+.firstrow img:nth-child(5){
+  animation-delay: 8.0s;
+}

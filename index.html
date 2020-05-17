@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <style media="screen">
+      body{
+        background-color: black;
+      }
+      img{
+        height: 20vh;
+        width: 20vh;
+        animation: up;
+      }
+      @keyframes up {
+        0%{
+        }
+        100%{
+        }
+      }
+
+    </style>
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-2 firstrow" style="height: 100vh">
+          <div class="h-25 row "><img class="img-fluid" src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row "><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row "><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row "><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row "><img class="img-fluid" src="ballon.gif" alt="loonssss"></div>
+        </div>
+        <div class="col-8 " style="height: 100vh">
+          <div class="row border" style="height: 80vh"><img class="img-fluid" src="thank.gif" alt="Thank You for Slow net"></div>
+          <div class="row" style="color: white; font-size: 40px;">
+            This is thanks from : <div id="param"></div>
+          </div>
+        </div>
+        <div class="col-2 secondrow">
+          <div class="h-25 row float-right"><img class="img-fluid" src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row float-right"><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row float-right"><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row float-right "><img class="img-fluid"  src="ballon.gif" alt="loonssss"></div>
+          <div class="h-25 row float-right"><img class="img-fluid" src="ballon.gif" alt="loonssss"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="param"></div> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    function click(){
+      var q = window.location.search;
+      var par = new URLSearchParams(q)
+      var name = par.get('name')
+      if(name=="" || name==undefined){name="Default name"}
+      var params = document.getElementById('param')
+      params.innerHTML = name
+    }
+    click()
+    </script>
+  </body>
+</html>
