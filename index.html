@@ -29,8 +29,11 @@
           <div class="row" style="height: 80vh">
             <iframe src="https://editor.p5js.org/PhoenixCreation/embed/flAbd0_wi"></iframe>
           </div>
-          <div class="row" style="color: white; font-size: 40px;">
-            This is thanks from : <div id="param"></div>
+          <div class="row text-center" style="color: white;">
+            Would you like to wish someone thanks? <br>
+            <input id="cname" type="text" class="m-3 form-control">
+            <button type="button" class="p-2 m-3 btn btn-success" onclick="clicked()">Generate Your Link</button>
+            <input type="text" name="Link" id="param" disabled class="m-3 form-control">
           </div>
         </div>
         <div class="col-2 secondrow">
@@ -41,72 +44,53 @@
         </div>
       </div>
     </div>
-    <!-- Footer -->
 <footer class="page-footer font-small special-color-dark pt-4" style="background-image: linear-gradient(0deg,red,white)">
 
-  <!-- Footer Elements -->
   <div class="container">
 
-    <!--Grid row-->
     <div class="row">
 
-      <!--Grid column-->
       <div class="col-md-6 mb-4">
 
-        <!-- Form -->
-        <form class="form-inline">
-          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </form>
-        <!-- Form -->
-
       </div>
-      <!--Grid column-->
 
-      <!--Grid column-->
       <div class="col-md-6 mb-4">
 
-        <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
-            aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
-          </div>
-        </form>
-
       </div>
-      <!--Grid column-->
 
     </div>
-    <!--Grid row-->
 
   </div>
-  <!-- Footer Elements -->
 
-  <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="https://phoenixcreation.herokuapp.com/"> PhoenixCreationcom</a>
   </div>
-  <!-- Copyright -->
 
 </footer>
-<!-- Footer -->
 
-    <!-- <div id="param"></div> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    function click(){
+    function start(){
       var q = window.location.search;
       var par = new URLSearchParams(q)
       var name = par.get('name')
-      if(name=="" || name==undefined){name="Default name"}
-      var params = document.getElementById('param')
-      params.innerHTML = name
+      if(name=="" || name==undefined){name="Het Patel"}
+      // var params = document.getElementById('param')
+      // params.innerHTML = name
     }
-    click()
+    function clicked(){
+      var input = document.getElementById('cname').value
+      var link="https://phoenixcreation.github.io/thanksfromhet/?name="+input;
+      var put = document.getElementById('param')
+      put.value=link
+      put.select();
+      put.setSelectionRange(0, 99999)
+      var res=document.execCommand("copy");
+      console.log(res);
+      // alert("Copied the text: " + put.value);
+    }
     </script>
   </body>
 </html>
