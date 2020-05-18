@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Thank You</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
     <style media="screen">
       body{
-        background-color: black;
+        background:linear-gradient(rgba(00,0,0,0.5), rgba(00,0,0,0.5)), url(bg.gif);
       }
       iframe {
         position: relative;
@@ -19,18 +20,47 @@
       #thanker {
         animation: col 2.0s linear   infinite;
       }
+      .wanted {
+        color: #ee3399;
+        font-size: 25px;
+      }
+      .txt {
+        animation: col 2.0s linear infinite;
+        animation-delay: 1.0s;
+      }
       @keyframes col {
         0%{
-          color: red;
+          color: #f00;
           font-size: 50px;
         }50%{
           color: yellow;
           font-size: 30px;
         }
         100%{
-          color:red;
+          color:#f00;
           font-size: 50px;
         }
+      }
+      .social{
+        content: "";
+        background: #0033ff;
+        border-style: none;
+        font-size: 50px;
+        padding: 15px 15px;
+        margin: 20px 50px;
+        width: 80px;
+        height: 80px;
+        text-decoration: none;
+        border-radius: 30%;
+        color: white;
+        transition: 0.5s linear;
+      }
+      .social:hover {
+        color: #0022dd;
+        background: white;
+      }
+      a {
+        text-decoration: none;
       }
     </style>
     <div class="container-fluid">
@@ -45,20 +75,30 @@
           <div class="row" style="height: 80vh">
             <iframe src="https://editor.p5js.org/PhoenixCreation/embed/flAbd0_wi"></iframe>
           </div>
-          <div class="row text-align-center text-center" style="color: yellow; font-size: 40px;">
+          <div class="row text-align-center text-center" style="color: yellow; font-size: 40px; height:200px;">
             <div class="col-12">
-              <p class="text-center">Thank you very much from </p> <div id="thanker" class="px-3" style="font-size: 40px "></div>
-              <p class=" mt-2 text-center">May you got everything you want.</p>
+              <p class="text-center txt">Thank you very much from </p> <div id="thanker" class="px-3" style="font-size: 40px "></div>
+              <p class=" mt-2 text-center txt">May you got everything you want.</p>
             </div>
           </div>
           <div class="row text-center" style="color: white;">
-            <div class="text-center p-2 m-3" style="font-size: 20px; color: white;">
-              Want to wish someone thanks? Enter your name and generate your link
+            <div class="col-12 text-center p-2 m-3">
+              <p class="text-center wanted">Want to wish someone thanks? Enter your name and generate your link</p>
+              <input id="cname" type="text" class="m-3 mt-0 form-control">
+              <button id="btnc" type="button" class="p-2 m-3 btn btn-success text-center" onclick="clicked()">Generate Your Link</button>
+              <input type="text" name="Link" id="param" disabled class="m-3 form-control">
+              <button id="btn" type="button" name="button" class=" p-2 m-3 btn btn-warning" onclick="copy()">Copy to Clipboard</button>
             </div>
-            <input id="cname" type="text" class="m-3 form-control">
-            <button id="btnc" type="button" class="p-2 m-3 btn btn-success" onclick="clicked()">Generate Your Link</button>
-            <input type="text" name="Link" id="param" disabled class="m-3 form-control">
-            <button id="btn" type="button" name="button" class=" p-2 m-3 btn btn-warning" onclick="copy()">Copy to Clipboard</button>
+
+          </div>
+          <div class="row">
+            <div class="col-12 text-center" style="color: #00f6ff; font-size: 25px;">
+              <p class="text-center">Want your custom greeting website?</p>
+              <p class="text-center">Get it for free.... Contact me on any option below</p>
+              <a href="https://chat.whatsapp.com/KYxxEO8Bjhp7VBS9S1zWj5" class="fa fa-whatsapp social" target="_blank"></a>
+              <a href="mailto:phs28052001@gmail.com" class="fa fa-envelope social"  target="_blank"></a>
+              <a href="https://www.facebook.com/patel.het.106" class="fa fa-facebook social"  target="_blank"></a>
+            </div>
           </div>
         </div>
         <div class="col-2 secondrow">
@@ -69,18 +109,26 @@
         </div>
       </div>
     </div>
-<footer class="page-footer font-small special-color-dark pt-4" style="background-image: linear-gradient(0deg,red,white)">
+<footer class="page-footer font-small special-color-dark pt-4" style="background-image: linear-gradient(0deg,rgb(255,200,0),rgba(255,100,100))">
 
-  <div class="container">
+  <div class="container-fluid">
 
     <div class="row">
 
-      <div class="col-md-6 mb-4">
-
-      </div>
-
-      <div class="col-md-6 mb-4">
-
+      <div class="col-md-12 mb-4">
+        <p class="text-center" style="font-size:20px;color: blue">All the images used in this website is neither claimed by the owner nor registered by the owner.</p>
+        <p class="text-center" style="font-size:20px; color:blue">But all the designs and content is reserved by the owner although copying content will not lead to any legal work.</p>
+        <p class="text-center" style="font-size:20px; color:blue">If you have any complaint or problem with this website or content of website kindly contact me from my websites given below.</p>
+        <p class="text-center" style="font-size:20px; color:blue">
+          <ul class="text-center" style="font-size:20px; color:blue">
+            <li>
+              <a href="https://phoenixcreation.herokuapp.com">Primary Website</a>
+            </li>
+            <li>
+              <a href="https://phoenixcreation2.herokuapp.com">Secondary Website (under development)</a>
+            </li>
+          </ul>
+        </p>
       </div>
 
     </div>
@@ -88,7 +136,7 @@
   </div>
 
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://phoenixcreation.herokuapp.com/"> PhoenixCreationcom</a>
+    <a href="https://phoenixcreation.herokuapp.com/"> PhoenixCreation.com</a>
   </div>
 
 </footer>
