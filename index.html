@@ -30,10 +30,13 @@
             <iframe src="https://editor.p5js.org/PhoenixCreation/embed/flAbd0_wi"></iframe>
           </div>
           <div class="row text-center" style="color: white;">
-            Would you like to wish someone thanks? <br>
+            <div class="text-center p-2 m-3" style="font-size: 20px; color: white;">
+              Want to wish someone thanks? Enter your name and generate your link
+            </div>
             <input id="cname" type="text" class="m-3 form-control">
-            <button type="button" class="p-2 m-3 btn btn-success" onclick="clicked()">Generate Your Link</button>
+            <button id="btn" type="button" class="p-2 m-3 btn btn-success" onclick="clicked()">Generate Your Link</button>
             <input type="text" name="Link" id="param" disabled class="m-3 form-control">
+            <button type="button" name="button" class=" p-2 m-3 btn btn-warning" onclick="copy()">Copy to Clipboard</button>
           </div>
         </div>
         <div class="col-2 secondrow">
@@ -85,12 +88,19 @@
       var link="https://phoenixcreation.github.io/thanksfromhet/?name="+input;
       var put = document.getElementById('param')
       put.value=link
-      put.select();
-      put.setSelectionRange(0, 99999)
-      var res=document.execCommand("copy");
-      console.log(res);
-      // alert("Copied the text: " + put.value);
     }
+    function copy(){
+      var aux = document.createElement("div");
+      aux.setAttribute("contentEditable", true);
+      aux.innerHTML = document.getElementById('param').value;
+      aux.setAttribute("onfocus", "document.execCommand('selectAll',false,null)");
+      document.body.appendChild(aux);
+      aux.focus();
+      document.execCommand("copy");
+      document.body.removeChild(aux);
+      var bt = document.getElementById('btn')
+      btn.focus()
+}
     </script>
   </body>
 </html>
