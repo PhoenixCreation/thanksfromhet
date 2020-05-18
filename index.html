@@ -16,6 +16,22 @@
         height: 100%;
         border-style: none;
       }
+      #thanker {
+        animation: col 2.0s linear infinite;
+      }
+      @keyframes col {
+        0%{
+          color: red;
+          font-size: 50px;
+        }50%{
+          color: yellow;
+          font-size: 30px;
+        }
+        100%{
+          color:red;
+          font-size: 50px;
+        }
+      }
     </style>
     <div class="container-fluid">
       <div class="row ">
@@ -28,6 +44,12 @@
         <div class="col-8 thanks" >
           <div class="row" style="height: 80vh">
             <iframe src="https://editor.p5js.org/PhoenixCreation/embed/flAbd0_wi"></iframe>
+          </div>
+          <div class="row text-align-center text-center" style="color: yellow; font-size: 40px;">
+            <div class="col-12">
+              <p class="text-center">Thank you very much from </p> <div id="thanker" class="px-3" style="font-size: 40px "></div>
+              <p class=" mt-2 text-center">May you got everything you want.</p>
+            </div>
           </div>
           <div class="row text-center" style="color: white;">
             <div class="text-center p-2 m-3" style="font-size: 20px; color: white;">
@@ -80,9 +102,10 @@
       var par = new URLSearchParams(q)
       var name = par.get('name')
       if(name=="" || name==undefined){name="Het Patel"}
-      // var params = document.getElementById('param')
-      // params.innerHTML = name
+      var params = document.getElementById('thanker')
+      params.innerHTML = " "+name+" "
     }
+    start()
     function clicked(){
       var input = document.getElementById('cname').value
       var link="https://phoenixcreation.github.io/thanksfromhet/?name="+input;
